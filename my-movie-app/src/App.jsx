@@ -1,9 +1,9 @@
 import { useState, useRef } from "react";
-import { Routes, Route, Link, useNavigate } from "react-router-dom";
+import { Routes, Route, Link } from "react-router-dom";
 import { SearchBar } from "./components/SearchBar";
 import { MovieList } from "./components/MovieList";
 import { MovieDetails } from "./components/MovieDetails";
-import { Footer } from './components/Footer';
+import { Footer } from "./components/Footer";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 
@@ -70,8 +70,9 @@ export default function App() {
 
   return (
     <div className="app-container">
-      <nav>
-        <Link to="/">Home</Link> | <Link to="/login">Login</Link> |{" "}
+      <nav style={{ marginBottom: "1rem" }}>
+        <Link to="/" style={{ marginRight: "1rem" }}>Home</Link>
+        <Link to="/login" style={{ marginRight: "1rem" }}>Login</Link>
         <Link to="/register">Register</Link>
       </nav>
 
@@ -84,7 +85,7 @@ export default function App() {
 
               <div style={{ textAlign: "center", marginBottom: "2rem" }}>
                 <Link to="/login">
-                  <button className="auth-button">Login</button>
+                  <button className="auth-button" style={{ marginRight: "1rem" }}>Login</button>
                 </Link>
                 <Link to="/register">
                   <button className="auth-button">Register</button>
@@ -105,9 +106,7 @@ export default function App() {
                 <>
                   <h2 ref={favoritesRef}>⭐ Favorite Movies</h2>
                   <MovieList
-                    movies={sampleMovies.filter((m) =>
-                      favorites.includes(m.id)
-                    )}
+                    movies={sampleMovies.filter((m) => favorites.includes(m.id))}
                     onMovieClick={setSelectedMovie}
                     favorites={favorites}
                     toggleFavorite={toggleFavorite}
@@ -127,6 +126,7 @@ export default function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
       </Routes>
+
       <Footer />
     </div>
   );
