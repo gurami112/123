@@ -1,0 +1,236 @@
+/* === RESET + BASE === */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  background: linear-gradient(to bottom, #0f0f0f, #121212);
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+.app-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+/* === HERO SECTION === */
+.hero {
+  background: url('https://m.media-amazon.com/images/I/81p+xe8cbnL._AC_SY679_.jpg') center/cover no-repeat;
+  height: 400px;
+  border-radius: 10px;
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, #121212, transparent 60%);
+  border-radius: 10px;
+}
+
+.hero h1 {
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  font-size: 3rem;
+  z-index: 2;
+}
+
+/* === NAV === */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding: 1rem 0;
+}
+
+nav a {
+  color: #f39c12;
+  text-decoration: none;
+  margin: 0 1rem;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* === SEARCH === */
+.search-bar input {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto 2rem auto;
+  display: block;
+  padding: 12px 20px;
+  border-radius: 10px;
+  background-color: #1e1e1e;
+  color: #fff;
+  font-size: 1rem;
+  border: 1px solid #333;
+}
+
+/* === MOVIE GRID === */
+.movie-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+/* === MOVIE CARD === */
+.movie-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  transition: transform 0.3s;
+  backdrop-filter: blur(6px);
+}
+
+.movie-card:hover {
+  transform: scale(1.03);
+}
+
+.movie-card img {
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+}
+
+.movie-info {
+  padding: 1rem;
+}
+
+.movie-info h2 {
+  margin-top: 0;
+  font-size: 1.1rem;
+  color: #f1f1f1;
+}
+
+.movie-info p {
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+.movie-info button {
+  margin-top: 0.5rem;
+  padding: 8px 12px;
+  background-color: #f39c12;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #000;
+}
+
+.movie-info button:hover {
+  background-color: #e67e22;
+}
+
+/* === DETAILS MODAL === */
+.movie-details-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99;
+}
+
+.movie-details {
+  background: #1c1c1c;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 700px;
+  color: white;
+  text-align: center;
+  position: relative;
+}
+
+.movie-details img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 2rem;
+  background: none;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* === AUTH === */
+.auth-form {
+  background: #1e1e1e;
+  padding: 2rem;
+  max-width: 400px;
+  margin: 3rem auto;
+  border-radius: 10px;
+  box-shadow: 0 0 15px #000;
+}
+
+.auth-form h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.auth-form input {
+  width: 100%;
+  padding: 10px;
+  margin: 0.5rem 0;
+  border: none;
+  border-radius: 5px;
+  background: #2c2c2c;
+  color: white;
+}
+
+.auth-form button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 1rem;
+  background-color: #f39c12;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.auth-form button:hover {
+  background-color: #e67e22;
+}
+
+/* === AUTH BUTTON === */
+.auth-button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  background-color: #f39c12;
+  color: black;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.auth-button:hover {
+  background-color: #e67e22;
+}
+.footer {
+  margin-top: 3rem;
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #ccc;
+  border-top: 1px solid #333;
+  background-color: #1a1a1a;
+}
